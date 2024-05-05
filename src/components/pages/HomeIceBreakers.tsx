@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 interface Icebreaker {
@@ -16,8 +17,8 @@ const HomeIceBreakers = () => {
 
   useEffect(() => {
     const fetchIcebreakers = async () => {
-      const response = await fetch('/api/icebreaker')
-      const data = await response.json()
+      const response = await axios.get('/api/icebreaker')
+      const data = await response.data
       setIcebreakers(data)
     }
 
@@ -33,7 +34,7 @@ const HomeIceBreakers = () => {
       <ul>
         {icebreakers.map((icebreaker: Icebreaker) => (
           <li key={icebreaker.id}>
-            <a href={`/icebreaker/${icebreaker.id}`}>{icebreaker.title}</a>
+            <a href={`/icebreaker`}>{icebreaker.title}</a>
           </li>
         ))}
       </ul>

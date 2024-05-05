@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import { Breadcrumbs } from '@/subframe/components/Breadcrumbs'
 import { Button } from '@/subframe/components/Button'
 import { Badge } from '@/subframe/components/Badge'
 import { LinkButton } from '@/subframe/components/LinkButton'
@@ -10,25 +9,22 @@ import { CommentBar } from '@/subframe/components/CommentBar'
 import { DropdownMenu } from '@/subframe/components/DropdownMenu'
 import * as SubframeCore from '@subframe/core'
 import { PhComment } from '@/subframe/components/PhComment'
+import Image from 'next/image'
 
 function PhLaunchPostCopy() {
   return (
     <div className="flex h-full w-full flex-col items-center bg-default-background">
       <div className="container max-w-none flex w-full max-w-[1024px] flex-col items-start gap-8 pt-12 pr-6 pb-12 pl-6">
-        <Breadcrumbs>
-          <Breadcrumbs.Item>Home</Breadcrumbs.Item>
-          <Breadcrumbs.Divider />
-          <Breadcrumbs.Item>Product</Breadcrumbs.Item>
-          <Breadcrumbs.Divider />
-          <Breadcrumbs.Item active={true}>Subframe</Breadcrumbs.Item>
-        </Breadcrumbs>
         <div className="flex w-full flex-col items-start gap-8">
           <div className="flex w-full flex-col items-start gap-6">
             <div className="flex w-full items-center justify-between">
               <div className="flex h-16 w-16 flex-none items-center justify-between">
-                <img
+                <Image
+                  height={80}
+                  width={80}
+                  alt={'image'}
                   className="h-full w-full grow shrink-0 basis-0"
-                  src="https://res.cloudinary.com/subframe/image/upload/v1711417507/shared/y2rsnhq3mex4auk54aye.png"
+                  src="https://res.cloudinary.com/subframe/image/upload/v1711417511/shared/t4qorgih4yjwudzjfkxq.png"
                 />
               </div>
             </div>
@@ -98,7 +94,7 @@ function PhLaunchPostCopy() {
             <PhMakerShoutout.Shoutout
               className="h-auto w-full grow shrink-0 basis-0"
               logo="https://res.cloudinary.com/subframe/image/upload/v1713909359/uploads/279/d7be8pphlxlqp7zep9ch.avif"
-              title="Supabase"
+              title="Truth or Dare"
               subtitle="8,379 upvotes"
               desc="Supabase helped us launch our product in way less time."
             />
