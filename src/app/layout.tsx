@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Providers } from './providers'
+import Nav from '@/components/Navbar'
 
 export const metadata: Metadata = {
   title: 'Subframe Next.js Starter',
@@ -29,7 +30,10 @@ export default function RootLayout({
       </head>
 
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Nav />
+          {children}
+        </Providers>
       </body>
     </html>
   )
