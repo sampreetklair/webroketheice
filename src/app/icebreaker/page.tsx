@@ -14,7 +14,7 @@ import Image from 'next/image'
 function PhLaunchPostCopy() {
   return (
     <div className="flex h-full w-full flex-col items-center bg-default-background">
-      <div className="container max-w-none flex w-full max-w-[1024px] flex-col items-start gap-8 pt-12 pr-6 pb-12 pl-6">
+      <div className="container flex w-full max-w-[1024px] flex-col items-start gap-8 pt-12 pr-6 pb-12 pl-6">
         <div className="flex w-full flex-col items-start gap-8">
           <div className="flex w-full flex-col items-start gap-6">
             <div className="flex w-full items-center justify-between">

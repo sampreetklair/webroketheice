@@ -1,4 +1,4 @@
-"use client";
+'use client'
 /*
  * Documentation:
  * PH Nav — https://app.subframe.com/library?component=PH+Nav_2eee19a9-f5f1-448c-96f8-d05330a005a8
@@ -9,18 +9,19 @@
  * Avatar — https://app.subframe.com/library?component=Avatar_bec25ae6-5010-4485-b46b-cf79e3943ab2
  */
 
-import React from "react";
-import * as SubframeCore from "@subframe/core";
-import { TextField } from "./TextField";
-import { Button } from "./Button";
-import { IconButton } from "./IconButton";
-import { DropdownMenu } from "./DropdownMenu";
-import { Avatar } from "./Avatar";
+import React from 'react'
+import * as SubframeCore from '@subframe/core'
+import { TextField } from './TextField'
+import { Button } from './Button'
+import { IconButton } from './IconButton'
+import { DropdownMenu } from './DropdownMenu'
+import { Avatar } from './Avatar'
+import Image from 'next/image'
 
 interface NavItemProps extends React.HTMLAttributes<HTMLDivElement> {
-  label?: string;
-  children?: React.ReactNode;
-  className?: string;
+  label?: string
+  children?: React.ReactNode
+  className?: string
 }
 
 const NavItem = React.forwardRef<HTMLElement, NavItemProps>(function NavItem(
@@ -32,7 +33,7 @@ const NavItem = React.forwardRef<HTMLElement, NavItemProps>(function NavItem(
       <SubframeCore.HoverCard.Trigger asChild={true}>
         <div
           className={SubframeCore.twClassNames(
-            "group/5a70be18 flex cursor-pointer flex-col items-start gap-4",
+            'group/5a70be18 flex cursor-pointer flex-col items-start gap-4',
             className
           )}
           ref={ref as any}
@@ -60,22 +61,22 @@ const NavItem = React.forwardRef<HTMLElement, NavItemProps>(function NavItem(
         </SubframeCore.HoverCard.Content>
       </SubframeCore.HoverCard.Portal>
     </SubframeCore.HoverCard.Root>
-  );
-});
+  )
+})
 
 interface NavDropdownItemProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: "green" | "red" | "blue";
-  icon?: SubframeCore.IconName;
-  title?: string;
-  subtitle?: string;
-  className?: string;
+  variant?: 'green' | 'red' | 'blue'
+  icon?: SubframeCore.IconName
+  title?: string
+  subtitle?: string
+  className?: string
 }
 
 const NavDropdownItem = React.forwardRef<HTMLElement, NavDropdownItemProps>(
   function NavDropdownItem(
     {
-      variant = "green",
-      icon = "FeatherCheck",
+      variant = 'green',
+      icon = 'FeatherCheck',
       title,
       subtitle,
       className,
@@ -86,10 +87,10 @@ const NavDropdownItem = React.forwardRef<HTMLElement, NavDropdownItemProps>(
     return (
       <div
         className={SubframeCore.twClassNames(
-          "group/0373d5b9 flex w-full cursor-pointer items-center gap-4 hover:bg-success-50",
+          'group/0373d5b9 flex w-full cursor-pointer items-center gap-4 hover:bg-success-50',
           {
-            "hover:bg-warning-50": variant === "blue",
-            "hover:bg-error-50": variant === "red",
+            'hover:bg-warning-50': variant === 'blue',
+            'hover:bg-error-50': variant === 'red',
           },
           className
         )}
@@ -99,21 +100,21 @@ const NavDropdownItem = React.forwardRef<HTMLElement, NavDropdownItemProps>(
         <div className="flex flex-col items-start gap-4">
           <div
             className={SubframeCore.twClassNames(
-              "flex h-10 w-10 flex-none items-center justify-center gap-2 rounded-md bg-success-100 group-hover/0373d5b9:bg-success-50",
+              'flex h-10 w-10 flex-none items-center justify-center gap-2 rounded-md bg-success-100 group-hover/0373d5b9:bg-success-50',
               {
-                "bg-warning-100 group-hover/0373d5b9:bg-warning-50":
-                  variant === "blue",
-                "bg-error-100 group-hover/0373d5b9:bg-error-50":
-                  variant === "red",
+                'bg-warning-100 group-hover/0373d5b9:bg-warning-50':
+                  variant === 'blue',
+                'bg-error-100 group-hover/0373d5b9:bg-error-50':
+                  variant === 'red',
               }
             )}
           >
             <SubframeCore.Icon
               className={SubframeCore.twClassNames(
-                "text-[20px] font-[400] leading-[24px] text-success-600 group-hover/0373d5b9:text-[24px] group-hover/0373d5b9:font-[400] group-hover/0373d5b9:leading-[28px]",
+                'text-[20px] font-[400] leading-[24px] text-success-600 group-hover/0373d5b9:text-[24px] group-hover/0373d5b9:font-[400] group-hover/0373d5b9:leading-[28px]',
                 {
-                  "text-warning-600": variant === "blue",
-                  "text-error-600": variant === "red",
+                  'text-warning-600': variant === 'blue',
+                  'text-error-600': variant === 'red',
                 }
               )}
               name={icon}
@@ -133,12 +134,12 @@ const NavDropdownItem = React.forwardRef<HTMLElement, NavDropdownItemProps>(
           ) : null}
         </div>
       </div>
-    );
+    )
   }
-);
+)
 
 interface PhNavRootProps extends React.HTMLAttributes<HTMLDivElement> {
-  className?: string;
+  className?: string
 }
 
 const PhNavRoot = React.forwardRef<HTMLElement, PhNavRootProps>(
@@ -146,14 +147,15 @@ const PhNavRoot = React.forwardRef<HTMLElement, PhNavRootProps>(
     return (
       <div
         className={SubframeCore.twClassNames(
-          "flex h-16 w-full items-center gap-6 border-b border-solid border-neutral-border bg-default-background pr-6 pl-6",
+          'flex h-16 w-full items-center gap-6 border-b border-solid border-neutral-border bg-default-background pr-6 pl-6',
           className
         )}
         ref={ref as any}
         {...otherProps}
       >
         <div className="flex w-full grow shrink-0 basis-0 items-center gap-8">
-          <img
+          <Image
+            alt="image"
             className="h-8 flex-none"
             src="https://res.cloudinary.com/subframe/image/upload/v1714064148/uploads/279/ziwiqsjnvkslfluibfow.svg"
           />
@@ -266,11 +268,11 @@ const PhNavRoot = React.forwardRef<HTMLElement, PhNavRootProps>(
           </SubframeCore.DropdownMenu.Root>
         </div>
       </div>
-    );
+    )
   }
-);
+)
 
 export const PhNav = Object.assign(PhNavRoot, {
   NavItem,
   NavDropdownItem,
-});
+})

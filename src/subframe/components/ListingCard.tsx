@@ -1,4 +1,4 @@
-"use client";
+'use client'
 /*
  * Documentation:
  * Listing Card — https://app.subframe.com/library?component=Listing+Card_d6c7c6a0-4f41-4d49-aeeb-17baed4bc7ad
@@ -6,21 +6,22 @@
  * Icon Button — https://app.subframe.com/library?component=Icon+Button_af9405b1-8c54-4e01-9786-5aad308224f6
  */
 
-import React from "react";
-import * as SubframeCore from "@subframe/core";
-import { Badge } from "./Badge";
-import { IconButton } from "./IconButton";
+import React from 'react'
+import * as SubframeCore from '@subframe/core'
+import { Badge } from './Badge'
+import { IconButton } from './IconButton'
+import Image from 'next/image'
 
 interface ListingCardRootProps extends React.HTMLAttributes<HTMLDivElement> {
-  image?: string;
-  title?: string;
-  rating?: string;
-  desc?: string;
-  dates?: string;
-  price?: string;
-  unit?: string;
-  showBadge?: boolean;
-  className?: string;
+  image?: string
+  title?: string
+  rating?: string
+  desc?: string
+  dates?: string
+  price?: string
+  unit?: string
+  showBadge?: boolean
+  className?: string
 }
 
 const ListingCardRoot = React.forwardRef<HTMLElement, ListingCardRootProps>(
@@ -42,7 +43,7 @@ const ListingCardRoot = React.forwardRef<HTMLElement, ListingCardRootProps>(
     return (
       <div
         className={SubframeCore.twClassNames(
-          "group/d6c7c6a0 flex w-full min-w-[240px] max-w-[384px] cursor-pointer flex-col items-start gap-2 overflow-hidden pb-2",
+          'group/d6c7c6a0 flex w-full min-w-[240px] max-w-[384px] cursor-pointer flex-col items-start gap-2 overflow-hidden pb-2',
           className
         )}
         ref={ref as any}
@@ -50,13 +51,13 @@ const ListingCardRoot = React.forwardRef<HTMLElement, ListingCardRootProps>(
       >
         <div
           className={SubframeCore.twClassNames(
-            "flex w-full flex-col items-start justify-center overflow-hidden rounded-md relative",
-            { "h-auto w-full flex-none": showBadge }
+            'flex w-full flex-col items-start justify-center overflow-hidden rounded-md relative',
+            { 'h-auto w-full flex-none': showBadge }
           )}
         >
           <Badge
             className={SubframeCore.twClassNames(
-              "hidden absolute top-4 left-2",
+              'hidden absolute top-4 left-2',
               { flex: showBadge }
             )}
             variant="neutral"
@@ -64,8 +65,8 @@ const ListingCardRoot = React.forwardRef<HTMLElement, ListingCardRootProps>(
             Guest favorite
           </Badge>
           <IconButton
-            className={SubframeCore.twClassNames("absolute top-2 right-2", {
-              "absolute top-2 right-2": showBadge,
+            className={SubframeCore.twClassNames('absolute top-2 right-2', {
+              'absolute top-2 right-2': showBadge,
             })}
             variant="inverse"
             icon="FeatherHeart"
@@ -83,7 +84,11 @@ const ListingCardRoot = React.forwardRef<HTMLElement, ListingCardRootProps>(
             icon="FeatherChevronLeft"
           />
           {image ? (
-            <img className="h-60 w-full flex-none object-cover" src={image} />
+            <Image
+              alt="image"
+              className="h-60 w-full flex-none object-cover"
+              src={image}
+            />
           ) : null}
         </div>
         <div className="flex w-full flex-col items-start gap-1">
@@ -129,8 +134,8 @@ const ListingCardRoot = React.forwardRef<HTMLElement, ListingCardRootProps>(
           ) : null}
         </div>
       </div>
-    );
+    )
   }
-);
+)
 
-export const ListingCard = ListingCardRoot;
+export const ListingCard = ListingCardRoot
