@@ -11,11 +11,7 @@ import { Button } from '@/subframe/components/Button'
 import Image from 'next/image'
 import Nav from '@/components/Navbar'
 import { HoverEffect } from '@/components/ui/card-hover-effect'
-import { Boxes } from '@/components/ui/background-boxes'
-import { GoogleGeminiEffectDemo } from '@/components/GeminiEffect'
 import { Spotlight } from '../components/ui/Spotlight'
-import { PinContainer } from '@/components/ui/3d-pin'
-import HomeIceBreakers from '../components/pages/HomeIceBreakers'
 
 function ExploreHomePageCopy() {
   const items = [
@@ -108,7 +104,6 @@ function ExploreHomePageCopy() {
             <Tabs.Item active={false}>Developer</Tabs.Item>
             <Tabs.Item active={false}>Business</Tabs.Item>
           </Tabs>
-          <HomeIceBreakers icebreakers={items} />
           <div
             id="editor-picks"
             className="flex w-full flex-col items-center gap-16"
